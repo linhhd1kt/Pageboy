@@ -20,9 +20,9 @@ open class PageboyViewController: UIViewController {
 
     // MARK: Properties
     
-    internal var pageViewController: UIPageViewController?
-    internal var previousPagePosition: CGFloat?
-    internal var expectedTransitionIndex: PageIndex?
+    var pageViewController: UIPageViewController?
+    var previousPagePosition: CGFloat?
+    var expectedTransitionIndex: PageIndex?
 
     /// The orientation that the page view controller transitions on.
     ///
