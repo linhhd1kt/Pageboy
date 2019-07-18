@@ -224,6 +224,14 @@ internal extension PageboyViewController {
         pageViewController.scrollView?.delaysContentTouches = delaysContentTouches
         pageViewController.scrollView?.isScrollEnabled = isScrollEnabled
         pageViewController.scrollView?.isUserInteractionEnabled = isUserInteractionEnabled
+      
+      pageViewController.gestureRecognizers.forEach { (gesture) in
+        if #available(iOSApplicationExtension 9.2, *) {
+          gesture.requiresExclusiveTouchType = false
+        } else {
+          // Fallback on earlier versions
+        }
+      }
         
         reloadData(reloadViewControllers: reloadViewControllers)
     }
